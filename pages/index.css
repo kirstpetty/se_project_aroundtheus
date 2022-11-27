@@ -56,6 +56,7 @@
 }
 
 .profile__title {
+  font-family: "Inter", Arial, sans-serif;
   font-size: 42px;
   line-height: 48px;
   font-weight: 500;
@@ -63,6 +64,7 @@
 }
 
 .profile__description {
+  font-family: "Inter", Arial, sans-serif;
   font-size: 18px;
   line-height: 21.78px;
   font-weight: 400;
@@ -106,6 +108,11 @@
 }
 
 .card__description {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
   display: flex;
   background-color: white;
   color: black;
