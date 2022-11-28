@@ -36,10 +36,12 @@
     "title button"
     "description description";
   grid-template-columns: minmax(auto, 373px) auto;
+  gap: 16px 18px;
 }
 
 .profile__edit-button {
   background: transparent url(../images/edit-icon.svg) center no-repeat;
+  align-self: center;
   height: 24px;
   width: 24px;
   grid-area: button;
@@ -69,7 +71,7 @@
   line-height: 21.78px;
   font-weight: 400;
   grid-area: description;
-  margin: 16px 0 0;
+  margin: 0;
 }
 
 .profile__image {
@@ -108,11 +110,6 @@
 }
 
 .card__description {
-  font-family: "Inter", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 1.2;
   display: flex;
   background-color: white;
   color: black;
@@ -122,6 +119,16 @@
   padding-left: 20px;
   align-items: center;
   justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card__label {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.2;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -131,6 +138,7 @@
   background: transparent url(../images/like-inactive.svg) center no-repeat;
   width: 21px;
   height: 18px;
+  border: none;
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
