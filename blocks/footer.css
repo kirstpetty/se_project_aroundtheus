@@ -20,11 +20,8 @@
   }
 
   .footer__title {
-    font-family: "Inter", Arial, sans-serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
-    line-height: 1.2;
     padding-top: 48px;
+    padding-left: 19px;
   }
 }
