@@ -1,0 +1,26 @@
+.header {
+  margin-top: 45px;
+  max-width: 880px;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(84, 84, 84, 0.7);
+}
+
+.header__logo {
+  width: 173px;
+  height: 33px;
+  left: 200px;
+  top: 45px;
+  margin-bottom: 41px;
+}
+
+@media screen and (max-width: 589px) {
+  .header {
+    margin-top: 28px;
+  }
+
+  .header__logo {
+    width: 126px;
+    height: 24px;
+    padding: 0 0 0 27px;
+  }
+}
