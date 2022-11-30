@@ -1,0 +1,123 @@
+.profile {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  color: #fff;
+}
+
+.profile__info {
+  display: grid;
+  grid-template-areas:
+    "title button"
+    "description description";
+  grid-template-columns: 14fr 1fr;
+  gap: 16px 18px;
+}
+
+.profile__edit-button {
+  background: transparent url(../images/edit-icon.svg) center no-repeat;
+  align-self: center;
+  height: 24px;
+  width: 24px;
+  grid-area: button;
+  border: 1px solid #ffffff;
+}
+
+.profile__add-button {
+  background: transparent url(../images/add-icon.svg) center no-repeat;
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+}
+
+.profile__title {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin: 0;
+}
+
+.profile__description {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  grid-area: description;
+  margin: 0;
+}
+
+.profile__image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 26.25px;
+}
+
+@media screen and (max-width: 589px) {
+  .profile {
+    flex-direction: column;
+    padding-top: 0;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 14px 15.25px;
+  }
+
+  .profile__image {
+    margin-bottom: 26.25px;
+    margin-right: 0;
+    margin-top: 38.25px;
+  }
+
+  .profile__title {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .profile__description {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile__add-button {
+    margin: 36px 0 0;
+    width: 282px;
+  }
+
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (min-width: 590px) and (max-width: 950px) {
+  .profile__info {
+    grid-template-columns: 10fr 1fr;
+  }
+
+  .profile__title {
+    font-size: 26px;
+    line-height: 32px;
+    white-space: nowrap;
+  }
+
+  .profile__description {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .profile__edit-button {
+    width: 20px;
+    height: 20px;
+  }
+}
