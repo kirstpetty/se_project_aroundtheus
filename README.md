@@ -30,3 +30,4 @@ This project is made so all the elements are displayed correctly on popular scre
 **GitHub**
 
 [Link to the project on GitHub](https://github.com/kirstpetty/se_project_aroundtheus)
+[Link to GitHub Pages](https://kirstpetty.github.io/se_project_aroundtheus/)
