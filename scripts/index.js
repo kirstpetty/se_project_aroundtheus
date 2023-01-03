@@ -31,21 +31,27 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 /*                               // const and let                             */
 /* -------------------------------------------------------------------------- */
-const modal = document.querySelector(".modal");
+const profileContainer = document.querySelector(".profile__info");
 
 const editProfileBtn = document.querySelector(".profile__edit-button");
 
-const modalForm = document.querySelector(".modal__container");
+const modal = document.querySelector(".modal");
 
-const closeEditProfileBtn = document.querySelector(".modal__close-button");
+const modalForm = modal.querySelector(".modal__container");
 
-const profileName = document.querySelector(".profile__title");
+const closeEditProfileBtn = modal.querySelector(".modal__close-button");
 
-const profileDescription = document.querySelector(".profile__description");
+const saveEditProfileBtn = modal.querySelector(".modal__save-button");
 
-const nameInput = document.querySelector(`.modal__input-name[name="name"]`);
+const profileName = profileContainer.querySelector(".profile__title");
 
-const descriptionInput = document.querySelector(
+const profileDescription = profileContainer.querySelector(
+  ".profile__description"
+);
+
+const nameInput = modalForm.querySelector(`.modal__input-name[name="name"]`);
+
+const descriptionInput = modalForm.querySelector(
   `.modal__input-description[name="description"]`
 );
 
@@ -76,3 +82,8 @@ closeEditProfileBtn.addEventListener("click", function () {
 /* -------------------------------------------------------------------------- */
 /*                               // edit profile title and desc               */
 /* -------------------------------------------------------------------------- */
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = inputName.value;
+  profileDescription.textContent = inputDescription.value;
+}
