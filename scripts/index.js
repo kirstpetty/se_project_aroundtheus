@@ -33,15 +33,17 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 const profileContainer = document.querySelector(".profile__info");
 
-const editProfileBtn = document.querySelector(".profile__edit-button");
+const editProfileBtn = document.querySelector("#profile-edit-button");
 
-const profileModal = document.querySelector(".modal");
+const profileModal = document.querySelector("#edit-modal");
 
-const modalForm = modal.querySelector(".modal__container");
+const profileEditModalForm = profileModal.querySelector(
+  "#profile-modal-container"
+);
 
-const closeEditProfileBtn = modal.querySelector(".modal__close-button");
+const closeEditProfileBtn = profileModal.querySelector(".modal__close-button");
 
-const saveEditProfileBtn = modal.querySelector(".modal__save-button");
+const saveEditProfileBtn = profileModal.querySelector(".modal__save-button");
 
 const profileName = profileContainer.querySelector(".profile__title");
 
@@ -49,16 +51,18 @@ const profileDescription = profileContainer.querySelector(
   ".profile__description"
 );
 
-const nameInput = modalForm.querySelector(`.modal__input-name[name="name"]`);
+const nameInput = profileEditModalForm.querySelector(
+  `.modal__input-name[name="name"]`
+);
 
-const descriptionInput = modalForm.querySelector(
+const descriptionInput = profileEditModalForm.querySelector(
   `.modal__input-description[name="description"]`
 );
 
 /* -------------------------------------------------------------------------- */
 /*                               // open edit profile                         */
 /* -------------------------------------------------------------------------- */
-function openModel() {
+function openModal() {
   profileModal.classList.add("modal_opened");
   profileName.textContent = inputName.value;
   profileDescription.textContent = inputDescription.value;
