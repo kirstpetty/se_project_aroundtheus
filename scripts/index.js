@@ -62,25 +62,23 @@ const descriptionInput = profileEditModalForm.querySelector(
 /* -------------------------------------------------------------------------- */
 /*                               // open edit profile                         */
 /* -------------------------------------------------------------------------- */
-function openModal() {
+function openProfileModal() {
   profileModal.classList.add("modal_opened");
-  profileName.textContent = inputName.value;
-  profileDescription.textContent = inputDescription.value;
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent = descriptionInput.value;
 }
 
-editProfileBtn.addEventListener("click", openModal);
+editProfileBtn.addEventListener("click", openProfileModal);
 
 /* -------------------------------------------------------------------------- */
 /*                               // close edit profile                        */
 /* -------------------------------------------------------------------------- */
 
-function removeModalOpened(modal) {
+function closeProfileModal() {
   profileModal.classList.remove("modal_opened");
 }
 
-closeEditProfileBtn.addEventListener("click", function () {
-  removeModalOpened(modal);
-});
+closeEditProfileBtn.addEventListener("click", closeProfileModal);
 
 /* -------------------------------------------------------------------------- */
 /*                               // edit profile title and desc               */
