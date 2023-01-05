@@ -29,37 +29,31 @@ const initialCards = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*                               // const and let                             */
+/*                               // Elements                                  */
 /* -------------------------------------------------------------------------- */
 const profileContainer = document.querySelector(".profile__info");
-
 const editProfileBtn = document.querySelector("#profile-edit-button");
-
 const profileEditModal = document.querySelector("#profile-edit-modal");
-
 const profileEditModalForm = profileEditModal.querySelector(".modal__form");
-
 const closeEditProfileBtn = profileEditModal.querySelector(
   ".modal__close-button"
 );
-
 const saveEditProfileBtn = profileEditModal.querySelector(
   ".modal__save-button"
 );
-
 const profileName = profileContainer.querySelector(".profile__title");
-
 const profileDescription = profileContainer.querySelector(
   ".profile__description"
 );
-
 const profileNameInput = profileEditModalForm.querySelector(
   "#profile-name-input"
 );
-
 const profileDescriptionInput = profileEditModalForm.querySelector(
   "#profile-description-input"
 );
+const cardListEl = document.querySelector(".cards__list");
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
 
 /* -------------------------------------------------------------------------- */
 /*                               // Functions                       */
@@ -82,6 +76,16 @@ function handlerProfileEditSubmit(e) {
   closePopup();
 }
 
+function getCardElement(cardData) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImageEl = cardElement.querySelector(".card__image");
+  const cardTitleEl = cardElement.querySelector(".card__label");
+  cardImageEl.src = cardData.link;
+  cardImageEl.alt = cardData.name;
+  cardTitleEl.textContent = cardData.name;
+  return cardElement;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               // open edit profile                         */
 /* -------------------------------------------------------------------------- */
@@ -99,3 +103,8 @@ closeEditProfileBtn.addEventListener("click", closePopup);
 /* -------------------------------------------------------------------------- */
 
 profileEditModalForm.addEventListener("submit", handlerProfileEditSubmit);
+
+initialCards.forEach((cardData) => {
+  const cardElement = getCardElement(cardData);
+  cardListEl.append(cardElement);
+});
