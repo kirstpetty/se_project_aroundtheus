@@ -50,6 +50,7 @@ modal__input-description
 
 .modal__close-button {
   background: transparent url(../images/close-icon.svg) center no-repeat;
+  background-size: contain;
   width: 40px;
   height: 40px;
   position: absolute;
@@ -58,6 +59,12 @@ modal__input-description
   background-color: rgba(0, 0, 0, 0);
   border: none;
   padding: 0;
+  transition: 0.5s;
+}
+
+.modal__close-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .modal__title {
@@ -93,7 +100,6 @@ modal__input-description
 .modal__save-button {
   width: 358px;
   height: 50.15px;
-
   background: #000;
   border-radius: 2px;
   border: 0;
@@ -104,6 +110,12 @@ modal__input-description
   line-height: 22px;
   text-align: center;
   color: #fff;
+  transition: 0.5s;
+}
+
+.modal__save-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 550px) {

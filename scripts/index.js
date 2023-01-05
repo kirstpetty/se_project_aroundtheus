@@ -59,11 +59,11 @@ const cardTemplate =
 /*                               // Functions                       */
 /* -------------------------------------------------------------------------- */
 
-function closePopup() {
+function closeModal() {
   profileEditModal.classList.remove("modal_opened");
 }
 
-function openprofileEditModal() {
+function openModal() {
   profileEditModal.classList.add("modal_opened");
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
@@ -73,7 +73,7 @@ function handlerProfileEditSubmit(e) {
   e.preventDefault();
   profileName.textContent = profileNameInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closePopup();
+  closeModal();
 }
 
 function getCardElement(cardData) {
@@ -90,13 +90,13 @@ function getCardElement(cardData) {
 /*                               // open edit profile                         */
 /* -------------------------------------------------------------------------- */
 
-editProfileBtn.addEventListener("click", openprofileEditModal);
+editProfileBtn.addEventListener("click", openModal);
 
 /* -------------------------------------------------------------------------- */
 /*                               // close edit profile                        */
 /* -------------------------------------------------------------------------- */
 
-closeEditProfileBtn.addEventListener("click", closePopup);
+closeEditProfileBtn.addEventListener("click", closeModal);
 
 /* -------------------------------------------------------------------------- */
 /*                        // submit edit profile title and desc               */
