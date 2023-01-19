@@ -180,7 +180,7 @@ cardAddModalForm.addEventListener("submit", (e) => {
   });
   renderCard(cardElement, cardListEl);
   closeModal(cardAddModal);
-  cardAddForm.reset();
+  cardAddModalForm.reset();
 });
 
 /* -------------------------------------------------------------------------- */
