@@ -32,13 +32,13 @@ const initialCards = [
 /*                               // Elements                                  */
 /* -------------------------------------------------------------------------- */
 const profileContainer = document.querySelector(".profile__info");
-const editProfileBtn = document.querySelector("#profile-edit-button");
+const editProfileButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditModalForm = profileEditModal.querySelector(".modal__form");
-const closeEditProfileBtn = profileEditModal.querySelector(
+const closeEditProfileButton = profileEditModal.querySelector(
   ".modal__close-button"
 );
-const saveEditProfileBtn = profileEditModal.querySelector(
+const saveEditProfileButton = profileEditModal.querySelector(
   ".modal__save-button"
 );
 const profileName = profileContainer.querySelector(".profile__title");
@@ -57,7 +57,7 @@ const cardAddModal = document.querySelector("#card-add-modal");
 const cardAddButton = document.querySelector("#add-button");
 const cardAddCloseButton = cardAddModal.querySelector(".modal__close-button");
 const cardAddModalForm = document.querySelector("#card-add-form");
-const CardSaveAddButton = cardAddModal.querySelector("modal__save-button");
+const cardSaveButton = cardAddModal.querySelector("modal__save-button");
 
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
@@ -106,15 +106,15 @@ function showPreviewImage(card) {
 
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__label");
+  const cardImageElement = cardElement.querySelector(".card__image");
+  const cardTitleElement = cardElement.querySelector(".card__label");
 
   const cardLikeButton = cardElement.querySelector(".card__like-button");
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.name;
-  cardImageEl.addEventListener("click", () => showPreviewImage(cardData));
-  cardTitleEl.textContent = cardData.name;
+  cardImageElement.src = cardData.link;
+  cardImageElement.alt = cardData.name;
+  cardImageElement.addEventListener("click", () => showPreviewImage(cardData));
+  cardTitleElement.textContent = cardData.name;
   cardLikeButton.addEventListener("click", handleLikeButton);
   cardDeleteButton.addEventListener("click", handleCardDeleteButton);
 
@@ -125,7 +125,7 @@ function getCardElement(cardData) {
 /*                               // open edit profile                         */
 /* -------------------------------------------------------------------------- */
 
-editProfileBtn.addEventListener("click", () => {
+editProfileButton.addEventListener("click", () => {
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
@@ -135,7 +135,7 @@ editProfileBtn.addEventListener("click", () => {
 /*                               // close edit profile                        */
 /* -------------------------------------------------------------------------- */
 
-closeEditProfileBtn.addEventListener("click", () => {
+closeEditProfileButton.addEventListener("click", () => {
   closeModal(profileEditModal);
 });
 
@@ -147,9 +147,6 @@ profileEditModalForm.addEventListener("submit", (e) => {
   e.preventDefault();
   profileName.textContent = profileNameInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-
-  console.log("submit");
-
   closeModal(profileEditModal);
 });
 
@@ -183,6 +180,7 @@ cardAddModalForm.addEventListener("submit", (e) => {
   });
   renderCard(cardElement, cardListEl);
   closeModal(cardAddModal);
+  cardAddForm.reset();
 });
 
 /* -------------------------------------------------------------------------- */
