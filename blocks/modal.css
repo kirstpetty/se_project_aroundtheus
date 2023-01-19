@@ -1,26 +1,15 @@
-/*
-modal
-modal__container
-modal__close-button
-modal__title
-modal__form
-modal__input-name
-modal__input-description
-*/
-
 .modal {
   font-family: "Inter", Arial, sans-serif;
   position: fixed;
   background-color: rgba(7, 7, 7, 0.5);
-
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  /*visibility: none; */
-  transition: visibility 0s 0.5s, opacity 0.5s linear;
-
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
   top: 0;
   bottom: 0;
   left: 0;
@@ -28,12 +17,10 @@ modal__input-description
 }
 
 .modal_opened {
+  visibility: visible;
   display: flex;
   opacity: 1;
-  /*visibility: visible;
-  opacity: 1;
-  pointer-events: all;
-  transition: visibility 0s, opacity 0.5s linear;*/
+  transition-delay: 0.5s;
 }
 
 .modal__container {
@@ -46,6 +33,25 @@ modal__input-description
   min-height: 330px;
   border: none;
   position: relative;
+}
+
+.modal__container-img-preview {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal__img-preview {
+  max-width: 75vw;
+  max-height: 75vh;
+  object-fit: cover;
+}
+
+.modal__preview-caption {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
 }
 
 .modal__close-button {
