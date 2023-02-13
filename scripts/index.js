@@ -199,3 +199,7 @@ initialCards.forEach((cardData) => {
 cardImagePreviewCloseButton.addEventListener("click", () =>
   closeModal(cardImagePreviewModal)
 );
+
+/* -------------------------------------------------------------------------- */
+/*                        // validation form                                  */
+/* -------------------------------------------------------------------------- */
