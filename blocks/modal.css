@@ -123,7 +123,23 @@
   opacity: 0.5;
   cursor: pointer;
 }
+/*
+.modal__input-error {
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: calc(100% + 15px);
+}
 
+.modal__error_visible {
+  opacity: 1;
+  border-top: 1px solid #ff0000;
+  width: 358px;
+}
+*/
 @media screen and (max-width: 550px) {
   .modal__container {
     width: 282px;
