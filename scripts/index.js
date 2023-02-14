@@ -109,6 +109,11 @@ function closeModalOnOutsideClick(e) {
   }
 }
 
+function fillProfileForm() {
+  profileNameInput.value = profileName.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
+}
+
 function handleLikeButton(e) {
   e.target.classList.toggle("card__like-button_active");
 }
@@ -150,8 +155,7 @@ function getCardElement(cardData) {
 /* -------------------------------------------------------------------------- */
 
 editProfileButton.addEventListener("click", () => {
-  profileNameInput.value = profileName.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
+  fillProfileForm();
   openModal(profileEditModal);
 });
 
@@ -205,6 +209,7 @@ cardAddModalForm.addEventListener("submit", (e) => {
   renderCard(cardElement, cardListEl);
   closeModal(cardAddModal);
   cardAddModalForm.reset();
+  disableSubmitButton(newCardSubmitButton, inactiveButtonClass);
 });
 
 /* -------------------------------------------------------------------------- */
@@ -227,10 +232,6 @@ cardImagePreviewCloseButton.addEventListener("click", () =>
 /* -------------------------------------------------------------------------- */
 /*            // close modal w/ clicking overlay  & Escape button             */
 /* -------------------------------------------------------------------------- */
-closeModals.forEach((button) => {
-  const modal = button.closest(".modal");
-  button.addEventListener("click", () => closeModal(modal));
-});
 
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", closeModalOnOutsideClick);
