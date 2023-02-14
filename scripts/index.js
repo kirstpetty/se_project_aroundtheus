@@ -39,7 +39,7 @@ const closeEditProfileButton = profileEditModal.querySelector(
   ".modal__close-button"
 );
 const saveEditProfileButton = profileEditModal.querySelector(
-  ".modal__save-button"
+  ".modal__button-submit"
 );
 const profileName = profileContainer.querySelector(".profile__title");
 const profileDescription = profileContainer.querySelector(
@@ -57,7 +57,7 @@ const cardAddModal = document.querySelector("#card-add-modal");
 const cardAddButton = document.querySelector("#add-button");
 const cardAddCloseButton = cardAddModal.querySelector(".modal__close-button");
 const cardAddModalForm = document.querySelector("#card-add-form");
-const cardSaveButton = cardAddModal.querySelector("modal__save-button");
+const cardSaveButton = cardAddModal.querySelector("modal__button-submit");
 
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;

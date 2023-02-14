@@ -23,7 +23,6 @@ function showInputError(
   inputElement.classList.add(inputErrorClass);
   errorMessageElement.textContent = inputElement.validationMessage;
   errorMessageElement.classList.add(errorClass);
-  console.log(errorMessageElement);
 }
 
 function hideInputError(
@@ -37,7 +36,6 @@ function hideInputError(
   inputElement.classList.remove(inputErrorClass);
   errorMessageElement.textContent = "";
   errorMessageElement.classList.remove(errorClass);
-  console.log(errorMessageElement);
 }
 
 function checkInputValidity(formElement, inputElement, options) {
@@ -54,23 +52,26 @@ function toggleButtonState(
   { inactiveButtonClass }
 ) {
   let foundInvalid = false;
+
   inputElements.forEach((inputElement) => {
     if (!inputElement.validity.valid) {
       foundInvalid = true;
     }
   });
+
   if (foundInvalid) {
     submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
+    return (submitButton.disabled = true);
   } else {
     submitButton.classList.remove(inactiveButtonClass);
+    submitButton.disabled = false;
   }
 }
 
 function setEventListeners(formElement, options) {
   const { inputSelector } = options;
   const inputElements = [...formElement.querySelectorAll(inputSelector)];
-  const submitButton = formElement.querySelector(".modal__save-button");
+  const submitButton = formElement.querySelector(".modal__button-submit");
   inputElements.forEach((inputElement) => {
     inputElement.addEventListener("input", (e) => {
       checkInputValidity(formElement, inputElement, options);
