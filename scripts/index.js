@@ -210,7 +210,8 @@ cardAddModalForm.addEventListener("submit", (e) => {
   closeModal(cardAddModal);
   cardAddModalForm.reset();
   /*disableSubmitButton(newCardSubmitButton, inactiveButtonClass);*/
-  disableSubmitButton(submitButton, inactiveButtonClass);
+  const submitButton = cardAddModalForm.querySelector(".modal__button-submit");
+  disableSubmitButton(submitButton, config.inactiveButtonClass);
 });
 
 /* -------------------------------------------------------------------------- */
@@ -233,7 +234,8 @@ cardImagePreviewCloseButton.addEventListener("click", () =>
 /* -------------------------------------------------------------------------- */
 /*            // close modal w/ clicking overlay  & Escape button             */
 /* -------------------------------------------------------------------------- */
+closeModals.forEach((button) => {
+  const modal = button.closest(".modal");
 
-modals.forEach((modal) => {
-  modal.addEventListener("mousedown", closeModalOnOutsideClick);
+  button.addEventListener("click", () => closeModal(modal));
 });
