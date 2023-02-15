@@ -115,7 +115,7 @@
   cursor: pointer;
 }
 
-.modal__submit-button_inactive:hover {
+.modal__submit-button_disabled:hover {
   opacity: 0.2;
   cursor: default;
 }
