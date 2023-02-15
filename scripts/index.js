@@ -209,7 +209,8 @@ cardAddModalForm.addEventListener("submit", (e) => {
   renderCard(cardElement, cardListEl);
   closeModal(cardAddModal);
   cardAddModalForm.reset();
-  disableSubmitButton(newCardSubmitButton, inactiveButtonClass);
+  /*disableSubmitButton(newCardSubmitButton, inactiveButtonClass);*/
+  disableSubmitButton(submitButton, inactiveButtonClass);
 });
 
 /* -------------------------------------------------------------------------- */
